@@ -89,8 +89,8 @@ project/
     "version": "1.21.5"
   },
   "entrypoints": {
-    "load": "src/main.oort",
-    "tick": "src/main.oort"
+    "load": "src/load.oort",
+    "tick": "src/tick.oort"
   },
   "build": {
     "output": "build/",
@@ -148,8 +148,7 @@ while hp > 0 {
 
 ```oort
 from "util/math.oort" import clamp
-from "util/math.oort" import lerp as linear
-from "other.oort" import *
+from "util/math.oort" import lerp
 ```
 
 ### 특징
@@ -179,13 +178,6 @@ Oort는 렉시컬 스코프를 사용합니다.
 ```oort
 from "a.oort" import update
 from "b.oort" import update   // 오류
-```
-
-해결 방법:
-
-```oort
-from "a.oort" import update as updateA
-from "b.oort" import update as updateB
 ```
 
 ---
