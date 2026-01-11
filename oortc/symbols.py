@@ -7,6 +7,7 @@ from pathlib import Path
 from . import ast
 from .ast import NodeVisitor
 
+
 class SymbolError(Exception):
     """Custom exception for symbol-related errors."""
     pass
