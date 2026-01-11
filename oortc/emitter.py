@@ -20,8 +20,9 @@ BUILTIN_COMMANDS: Set[str] = {
 
 class Emitter(ast.NodeVisitor):
     def __init__(self, config: ProjectConfig, modules: Dict[Path, ast.Module]):
-        print("DEBUG: Initializing Emitter...")
         self.config = config
+        if self.config.build.debug_message:
+            print("DEBUG: Initializing Emitter...")
         self.modules = modules
         self.datapack_root: Path = self.config.build.output / self.config.build.datapack_name
         self.functions_dir: Path = self.datapack_root / "data" / self.config.package.namespace / "functions"
@@ -31,13 +32,15 @@ class Emitter(ast.NodeVisitor):
         self.function_count = 0
 
     def emit_all(self):
-        print("DEBUG: Emitter.emit_all() called.")
+        if self.config.build.debug_message:
+            print("DEBUG: Emitter.emit_all() called.")
         self._setup_directories()
         self._emit_pack_mcmeta()
         self._emit_tags()
 
         for path, module in self.modules.items():
-            print(f"DEBUG: Emitter processing module: {path}")
+            if self.config.build.debug_message:
+                print(f"DEBUG: Emitter processing module: {path}")
             self.current_module_path = path
             self.visit(module)
             
@@ -72,7 +75,8 @@ class Emitter(ast.NodeVisitor):
 
     def _write_mcfunction(self, function_path: str, lines: List[str]):
         full_path = self.functions_dir / f"{function_path}.mcfunction"
-        print(f"DEBUG: Emitter is writing to {full_path.resolve()}")
+        if self.config.build.debug_message:
+            print(f"DEBUG: Emitter is writing to {full_path.resolve()}")
         full_path.parent.mkdir(parents=True, exist_ok=True)
         with open(full_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(lines))
@@ -116,7 +120,8 @@ class Emitter(ast.NodeVisitor):
     # =======================================
 
     def visit_FunctionDeclaration(self, node: ast.FunctionDeclaration):
-        print(f"DEBUG: Visiting FunctionDeclaration: {node.name.name}")
+        if self.config.build.debug_message:
+            print(f"DEBUG: Visiting FunctionDeclaration: {node.name.name}")
         rel_path = self.current_module_path.relative_to(self.config.project_dir)
         function_base = self._oort_path_to_function_base(rel_path)
         function_path = f"{function_base}/{node.name.name}"
@@ -127,7 +132,8 @@ class Emitter(ast.NodeVisitor):
         self.output_lines = []
 
     def visit_OnBlock(self, node: ast.OnBlock):
-        print(f"DEBUG: Visiting OnBlock: {node.event_type}")
+        if self.config.build.debug_message:
+            print(f"DEBUG: Visiting OnBlock: {node.event_type}")
         rel_path = self.current_module_path.relative_to(self.config.project_dir)
         function_base = self._oort_path_to_function_base(rel_path)
         function_path = f"{function_base}/on_{node.event_type}"

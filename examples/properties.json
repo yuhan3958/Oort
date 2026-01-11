@@ -12,6 +12,7 @@
         "tick": "src/tick.oort"
     },
     "build": {
-        "datapack_name": "OortExample"
+        "datapack_name": "OortExample",
+        "debug_message": "True"
     }
 }

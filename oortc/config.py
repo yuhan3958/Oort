@@ -54,6 +54,7 @@ class BuildConfig:
     output: Path
     datapack_name: str
     clean: bool = True
+    debug_message: bool = False
 
 
 @dataclass
@@ -141,7 +142,8 @@ class ProjectConfig:
         build = BuildConfig(
             output=abs_project_dir / Path(output_dir),
             datapack_name=datapack_name,
-            clean=bool(build_data.get("clean", True))
+            clean=bool(build_data.get("clean", True)),
+            debug_message=bool(build_data.get("debug_message", False))
         )
 
         return cls(
