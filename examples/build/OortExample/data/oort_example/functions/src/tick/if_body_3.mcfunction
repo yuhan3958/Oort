@@ -1,1 +1,3 @@
-function oort_example:src/tick/main_loop
+give @p diamond
+say diamond
+scoreboard players set anc_clear oort_vars 0

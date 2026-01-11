@@ -7,4 +7,5 @@ fn setup() {
 on load {
     setup();
     tick_counter = 0;
+    anc_clear=0
 }

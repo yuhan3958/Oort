@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c7fad9-037e-4da8-bb1f-f4953b05beda" name="변경" comment="Oort Cloud!">
+      <change afterPath="$PROJECT_DIR$/examples/src/abc.oort" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/load/on_load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/load/on_load.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_1.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_1.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_2.mcfunction" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_3.mcfunction" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/on_tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/on_tick.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/properties.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_2.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_2.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_3.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/if_body_3.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/main_loop.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/examples/build/OortExample/data/oort_example/functions/src/tick/main_loop.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/src/load.oort" beforeDir="false" afterPath="$PROJECT_DIR$/examples/src/load.oort" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/src/tick.oort" beforeDir="false" afterPath="$PROJECT_DIR$/examples/src/tick.oort" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oortc/emitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/oortc/emitter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oortc/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/oortc/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oortc/resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/oortc/resolver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oortc/symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/oortc/symbols.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +21,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -129,7 +125,7 @@
       <updated>1768103854822</updated>
       <workItem from="1768103855732" duration="9368000" />
       <workItem from="1768113666099" duration="40000" />
-      <workItem from="1768131608716" duration="856000" />
+      <workItem from="1768131608716" duration="2124000" />
     </task>
     <task id="LOCAL-00001" summary="Oort Cloud!">
       <option name="closed" value="true" />
@@ -163,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768113512598</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Oort Cloud!">
+      <option name="closed" value="true" />
+      <created>1768132623388</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768132623388</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +200,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Oort$python__m_oortc_build__project_dir_.coverage" NAME="python -m oortc build examples 커버리지 결과" MODIFIED="1768112403895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Oort$python__m_oortc_build_examples.coverage" NAME="python -m oortc build examples 커버리지 결과" MODIFIED="1768132428546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Oort$python__m_oortc_build_examples.coverage" NAME="python -m oortc build examples 커버리지 결과" MODIFIED="1768133726020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

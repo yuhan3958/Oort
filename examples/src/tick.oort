@@ -1,13 +1,22 @@
 # tick.oort
 
-from "helpers.oort" import announce
+from "helpers.oort" import announce;
+from "abc.oort" import abc;
 
 fn main_loop() {
     # Use the imported macro
     if tick_counter < 5 {
         announce("Testing macro expansion");
-        tick_counter = tick_counter + 1
-        }
+        tick_counter = tick_counter + 1;
+    }
+    if tick_counter==5 {
+        anc_clear=1;
+        tick_counter=6;
+    }
+    if anc_clear==1 {
+        abc(diamond);
+        anc_clear=0;
+    }
 }
 
 on tick {
