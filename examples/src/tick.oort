@@ -1,0 +1,15 @@
+# tick.oort
+
+from "helpers.oort" import announce
+
+fn main_loop() {
+    # Use the imported macro
+    if tick_counter < 5 {
+        announce("Testing macro expansion");
+        tick_counter = tick_counter + 1
+        }
+}
+
+on tick {
+        main_loop();
+}

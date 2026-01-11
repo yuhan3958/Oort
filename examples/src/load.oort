@@ -1,0 +1,10 @@
+# load.oort
+
+fn setup() {
+    say("Oort datapack loaded!");
+}
+
+on load {
+    setup();
+    tick_counter = 0;
+}

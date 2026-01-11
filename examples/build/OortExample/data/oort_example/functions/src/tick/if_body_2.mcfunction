@@ -1,0 +1,1 @@
+scoreboard players set ready oort_vars 1
