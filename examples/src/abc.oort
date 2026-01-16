@@ -1,6 +1,0 @@
-# abc.oort
-
-macro abc(a) {
-    give(@p, a)
-    say(a)
-}

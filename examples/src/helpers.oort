@@ -1,6 +1,0 @@
-# helpers.oort
-
-# A macro to announce something to all players.
-macro announce(message) {
-    say(message);
-}

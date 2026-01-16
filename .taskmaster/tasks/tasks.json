@@ -1,0 +1,227 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Initialize Project Structure",
+        "description": "Create the project directory and initialize the build system.",
+        "details": "Set up the project structure with `properties.json` and source code directory. Use a build tool like Maven or Gradle for dependency management.",
+        "testStrategy": "Ensure that all directories and files are created correctly.",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "in-progress",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Project Directory and Setup Build System",
+            "description": "Create the project directory and initialize the build system using Maven or Gradle.",
+            "dependencies": [],
+            "details": "Set up the project structure with `properties.json` and source code directory.",
+            "status": "done",
+            "testStrategy": "Ensure that all directories and files are created correctly.",
+            "updatedAt": "2026-01-16T12:22:25.742Z",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Parse properties.json",
+            "description": "Implement parsing logic to load `properties.json` and extract Minecraft version, entrypoints, scoreboard objectives, and pack_format.",
+            "dependencies": [
+              1
+            ],
+            "details": "Read and parse `properties.json`, validating the extracted data against expected values.",
+            "status": "deferred",
+            "testStrategy": "Validate the parsing by comparing the loaded properties with expected values.",
+            "parentId": "undefined",
+            "updatedAt": "2026-01-16T12:09:44.260Z"
+          },
+          {
+            "id": 3,
+            "title": "Initialize Variables Model",
+            "description": "Design and implement the variable model for `int` and `var` types, ensuring operations on `int` can only be performed by converting them to `var`, and vice versa.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create data structures for variables and implement conversion functions like `toInt` and `toVar`. Validate the variable model with simple operations.",
+            "status": "deferred",
+            "testStrategy": "Verify the variable model by testing basic arithmetic operations.",
+            "parentId": "undefined",
+            "updatedAt": "2026-01-16T12:09:57.854Z"
+          },
+          {
+            "id": 4,
+            "title": "Implement Coordinate System",
+            "description": "Define and implement the coordinate system using `Position` structures, ensuring methods to create positions from entities or explicit coordinates.",
+            "dependencies": [
+              3
+            ],
+            "details": "Create a `Position` class with methods to handle position creation and manipulation. Validate the system with simple examples.",
+            "status": "deferred",
+            "testStrategy": "Validate the position system by creating and manipulating different types of positions.",
+            "parentId": "undefined",
+            "updatedAt": "2026-01-16T12:10:11.553Z"
+          },
+          {
+            "id": 5,
+            "title": "IR Generation",
+            "description": "Generate an intermediate representation (IR) from the parsed source code, representing statements and their dependencies.",
+            "dependencies": [
+              3,
+              4,
+              7,
+              8
+            ],
+            "details": "Create a graph-based IR for the program and ensure it reflects the original structure. Validate the generation with simple examples.",
+            "status": "deferred",
+            "testStrategy": "Validate the IR by comparing the generated IR against expected outputs.",
+            "parentId": "undefined",
+            "updatedAt": "2026-01-16T12:10:24.060Z"
+          }
+        ],
+        "updatedAt": "2026-01-16T12:22:25.742Z"
+      },
+      {
+        "id": "2",
+        "title": "Parse properties.json",
+        "description": "Implement parsing logic to load `properties.json`.",
+        "details": "Read and parse `properties.json`, extracting the package namespace, Minecraft version, entrypoints, and scoreboard objectives. Ensure that the pack_format is correctly inferred from the Minecraft version or set a default if unknown.",
+        "testStrategy": "Validate the parsing by comparing the loaded properties with expected values.",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "3",
+        "title": "Initialize Variables Model",
+        "description": "Design and implement the variable model for `int` and `var` types.",
+        "details": "Create data structures to represent variables, ensuring that operations on `int` can only be performed by converting them to `var`, and vice versa. Implement conversion functions like `toInt` and `toVar`.",
+        "testStrategy": "Verify the variable model with simple operations such as adding two `int`s or converting a `var` to an `int`.",
+        "priority": "medium",
+        "dependencies": [
+          "2"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "4",
+        "title": "Implement Coordinate System",
+        "description": "Define and implement the coordinate system using `Position` structures.",
+        "details": "Create a `Position` class that represents the (x, y, z) coordinates. Provide methods to create positions from entities or explicit coordinates.",
+        "testStrategy": "Validate the position system with examples of creating and manipulating positions.",
+        "priority": "medium",
+        "dependencies": [
+          "3"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "5",
+        "title": "Parse Source Code",
+        "description": "Implement parsing logic to handle `.oort` source code.",
+        "details": "Read and parse the `.oort` files, identifying statements like declarations, assignments, conditions, loops, and imports. Ensure that identifiers are resolved correctly within their scopes.",
+        "testStrategy": "Validate the parsing with simple examples of valid and invalid syntax.",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "6",
+        "title": "Scope and Name Resolution",
+        "description": "Implement scope management and name resolution to handle conflicts within variable declarations.",
+        "details": "Ensure that variables, functions, macros, and imports are resolved correctly. Handle conflicts by using unique identifiers or namespaces.",
+        "testStrategy": "Validate the scope and name resolution with examples of multiple variable declarations and conflicting names.",
+        "priority": "high",
+        "dependencies": [
+          "5"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "7",
+        "title": "Macro Processing",
+        "description": "Implement macro processing to convert Oort macros into Minecraft function macros.",
+        "details": "Create functions that translate Oort macro calls into Minecraft command syntax. Store the generated Minecraft commands in a suitable format for later output.",
+        "testStrategy": "Validate the macro processing by comparing generated commands with expected outputs.",
+        "priority": "high",
+        "dependencies": [
+          "6"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "8",
+        "title": "Execute Statement Flattening",
+        "description": "Implement logic to flatten execute statements into a single block.",
+        "details": "Modify the structure of execute statements by flattening them into a single block, ensuring that modifiers are reordered according to Minecraft rules. Handle nested executes properly by merging them into one.",
+        "testStrategy": "Validate the execution statement flattening with examples of nested and combined execute statements.",
+        "priority": "high",
+        "dependencies": [
+          "6"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "9",
+        "title": "Int/Var Backend Determination",
+        "description": "Decide the best backend representation for `int` and `var` types based on the generated IR.",
+        "details": "Based on the intermediate representation (IR), determine whether to output `int` values directly or use a storage-based approach. This decision affects how variables are managed during execution.",
+        "testStrategy": "Validate the backend determination by comparing the output with expected results for different variable types.",
+        "priority": "medium",
+        "dependencies": [
+          "3"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "10",
+        "title": "IR Generation",
+        "description": "Generate an intermediate representation (IR) from the parsed source code.",
+        "details": "Create a graph-based representation of the program, representing statements and their dependencies. Ensure that the IR accurately reflects the original source code structure.",
+        "testStrategy": "Validate the IR generation by comparing the generated IR with expected outputs for simple examples.",
+        "priority": "high",
+        "dependencies": [
+          "7",
+          "8",
+          "3",
+          "9"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "11",
+        "title": "Minecraft Function and Tag Generation",
+        "description": "Implement logic to generate Minecraft function files and tags based on the generated IR.",
+        "details": "Translate the intermediate representation into Minecraft commands and tags. Ensure that the generated files are correctly structured and have all necessary metadata like pack.mcmeta.",
+        "testStrategy": "Validate the Minecraft function and tag generation by comparing the output with expected outputs for simple examples.",
+        "priority": "high",
+        "dependencies": [
+          "10"
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastModified": "2026-01-16T12:22:25.745Z",
+      "taskCount": 11,
+      "completedCount": 0,
+      "tags": [
+        "master"
+      ]
+    }
+  }
+}
